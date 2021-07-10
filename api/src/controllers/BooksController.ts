@@ -39,6 +39,16 @@ class BooksController {
     }
     return response.json(books)
   }
+
+  async get (request: Request, response: Response) {
+    const { id } = request.params
+    const book = await client.book.findUnique({
+      where: {
+        id
+      }
+    })
+    return response.json(book)
+  }
 }
 
 export { BooksController }

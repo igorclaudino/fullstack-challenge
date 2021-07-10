@@ -27,7 +27,7 @@ import Book from '../../types/Book'
 import { useHistory, useLocation } from 'react-router-dom'
 
 
-const Home: React.FC = () => {
+const NewBook: React.FC = () => {
 
   const [books, setBooks] = useState<Book[]>([]);
   const location = useLocation();
@@ -53,35 +53,9 @@ const Home: React.FC = () => {
 
   return (
     <Container>
-      <InputContainer>
-        <CircleIcon src={searchIcon} alt="Search Icon" />
-        <TextInput placeholder="Search book" onChange={handleSearch} />
-      </InputContainer>
-      <WelcomeTitle>Hi, <strong>Mehmed Al Faith</strong> 👋</WelcomeTitle>
-      <BooksContainer>
-        {books.map((book) => (
-          <BookCard onClick={() => history.push(`/detail/${book.id}`)} key={book.id}>
-            <BookImg src={bookImg} alt="Book image" />
-            <BookName>{book.name}</BookName>
-            <BookAuthor>by {book.author}</BookAuthor>
-          </BookCard>))}
-      </BooksContainer>
-      <FloatMenu>
-        <MenuItem onClick={() => history.push(`/`)}>
-          <MenuIcon src={location.pathname === '/' ? homeIcon : homeIconDisabled} alt='Home Icon' />
-          <span>Home</span>
-        </MenuItem>
-        <MenuItem onClick={() => history.push(`/new-book`)}>
-          <MenuIcon src={location.pathname === '/new-book' ? plusIcon : plusIconDisabled} alt='Add Book Icon' />
-          <span>Add Book</span>
-        </MenuItem>
-        <MenuItem>
-          <MenuIcon src={profileIcon} alt='Profile Icon' />
-          <span>Profile</span>
-        </MenuItem>
-      </FloatMenu>
+      
     </Container>
   )
 }
 
-export default Home
+export default NewBook

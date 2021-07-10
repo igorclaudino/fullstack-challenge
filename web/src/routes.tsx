@@ -6,15 +6,19 @@ import {
 import history from "./history";
 import BookDetail from "./pages/BookDetail";
 import Home from "./pages/Home";
+import NewBook from "./pages/NewBook";
 
 
 const Routes = () => (
   <Router history={history}>
     <Switch>
-      <Route path='/'>
+      <Route path='/' exact>
         <Home/>
       </Route>
-      <Route path='/detail/:id' exact>
+      <Route path='/new-book'>
+        <NewBook/>
+      </Route>
+      <Route path='/detail/:id'>
         <BookDetail/>
       </Route>
     </Switch>

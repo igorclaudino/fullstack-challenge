@@ -22,6 +22,12 @@ export const TextInput = styled.input`
   background-color: transparent;
   padding: 10px 10px;
   width: 100%;
+  font-size: 16px;
+  line-height: 18px;
+/* identical to box height, or 112% */
+
+
+  color: #000000;
   ::placeholder{
     color: #54565A;
 ;
@@ -39,6 +45,7 @@ export const BooksContainer = styled.section`
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 14px;
+  justify-content: space-around;
 `
 export const BookCard = styled.div`
   display: flex;

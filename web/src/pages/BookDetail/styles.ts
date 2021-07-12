@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import bgImg from '../../assets/bg-detail.svg'
+
 export const Container = styled.div`
   display: flex;
   flex: 1;
@@ -9,6 +10,9 @@ export const Container = styled.div`
   background-image: url(${bgImg}) ;
   background-repeat: no-repeat;
   background-size:100%;
+  @media (min-width: 600px) {
+     background-image: none;
+  }
   `
 
 export const BackButton = styled.img`
@@ -33,21 +37,12 @@ export const BookHeader = styled.div`
 
 export const BookContent = styled.div`
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   flex-direction: column;
   margin-top: 15px;
   margin: 31px 20px;
+  max-width: 900px;
 `;
-
-
-export const BooksContainer = styled.section`
-  margin-top: 36px;
-  display: flex;
-  flex-wrap: wrap;
-  /* align-items: center; */
-  justify-content: space-between;
-`
 
 export const BookName = styled.h1`
   font-style: normal;
@@ -61,7 +56,6 @@ export const BookName = styled.h1`
 export const BookAuthor = styled.h2`
   font-size: 16px;
   line-height: 19px;
-/* identical to box height */
 
   letter-spacing: 0.670588px;
 
@@ -77,6 +71,7 @@ export const BookDescription = styled.p`
 
   color: rgba(49, 49, 49, 0.6);
   margin-top: 10px;
+  margin-bottom: 120px;
 `
 export const FloatMenuContainer = styled.section`
   position:fixed;

@@ -5,71 +5,75 @@ export const Container = styled.div`
   flex-direction: column;
   padding: 50px 20px;
 `
-export const InputContainer = styled.span`
-  display: flex;
-  align-items: center;
+export const PageTitle = styled.div`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FF6978;
+  margin-top: 53px;
+`;
+
+export const Form = styled.form`
+  margin-top: 50px;
+`;
+
+export const Label = styled.label`
+  font-size: 16px;
+  line-height: 18px;
+
+  text-align: center;
+
+  color: #000000;
+
+  font-weight: bold;
+
+`;
+export const TextInput = styled.input`
   height: 48px;
   width: 100%;
-  background-color: #FDFCFC;
-  box-shadow: 5px 5px 80px rgba(212, 173, 134, 0.122623);
+  background: #FDFCFC;
+  box-shadow: 5px 5px 80px rgba(212, 173, 134, 0.4926);
   border-radius: 10px;
-`
-export const CircleIcon = styled.img`
-  margin-left: 15px;
-`
-export const TextInput = styled.input`
-  border: none;
-  background-color: transparent;
+  margin-bottom: 38px;
+  margin-top: 10px;
   padding: 10px 10px;
+  border: none;
+  ::placeholder{
+    color: #54565A;
+
+  }
+`
+
+export const TextArea = styled.textarea`
   width: 100%;
+  background: #FDFCFC;
+  box-shadow: 5px 5px 80px rgba(212, 173, 134, 0.4926);
+  border-radius: 10px;
+  margin-bottom: 38px;
+  margin-top: 10px;
+  padding: 10px 10px;
+  border: none;
   ::placeholder{
     color: #54565A;
 ;
   }
 `
-export const WelcomeTitle = styled.h1`
-  margin-top: 30px;
-  strong {
-    color: #FF6978;
-  }
-`
 
-export const BooksContainer = styled.section`
-  margin-top: 36px;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 14px;
-`
-export const BookCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-`
-export const BookImg = styled.img`
-  width: 105px;
-  height: 153px;
-  filter: drop-shadow(0px 2px 4px rgba(229, 229, 229, 0.5));
-  border-radius: 5px;
-`
-export const BookName = styled.h3`
+export const Button = styled.button`
+  background: #FF6978;
+  box-shadow: 5px 5px 80px rgba(212, 173, 134, 0.4926);
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  height: 48px;
+  margin-bottom: 60px;
   font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  color: rgba(49, 49, 49, 0.8);
-  margin-top: 9px;
-  margin-bottom: 5px;
-  width: 100px;
-`
-export const BookAuthor = styled.h4`
-  font-style: normal;
-  font-weight: 900;
-  font-size: 10px;
-  line-height: 12px;
-  margin-bottom: 12px;
-  color: rgba(49, 49, 49, 0.8);
-  width: 100px;
-`
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+`;
 
 export const FloatMenu = styled.section`
   background-color: #fff;

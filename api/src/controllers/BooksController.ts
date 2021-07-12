@@ -42,6 +42,12 @@ class BooksController {
 
   async get (request: Request, response: Response) {
     const { id } = request.params
+    if (!id) {
+      return response.status(400).json({
+        status: 'error',
+        message: 'Book ID are required'
+      })
+    }
     const book = await client.book.findUnique({
       where: {
         id

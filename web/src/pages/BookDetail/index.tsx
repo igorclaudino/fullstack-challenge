@@ -48,14 +48,14 @@ const BookDetail: React.FC = () => {
         <BackButton src={backIcon} alt='Back button' onClick={() => history.goBack()}/>
         <BookHeader>
           <BookImage src={bookImg}/>
-        </BookHeader>
-        <BookContent>
+          <BookContent>
           <BookName>{book?.name}</BookName>
           <BookAuthor>{book?.author}</BookAuthor>
           <BookDescription>
           {book?.description}
           </BookDescription>
         </BookContent>
+        </BookHeader> 
         <FloatMenuContainer>
           <FloatMenu>
             <MenuItem>

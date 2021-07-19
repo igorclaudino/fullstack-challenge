@@ -1,42 +1,54 @@
-# Fullstack Challenge
+# Foton Books
 
-Clone this repository and start our challenge **right now**.
+## API
 
-Use **React** or **React Native** to develop the frontend app. In backend, use **NodeJS**.
+- Express
+- Prisma
+- PostgreSQL
 
-**NOTE:** If you have any questions regarding the test, just send us your question on our Discord's channel **#technical-challenge** on [Foton Discord](https://discord.gg/uw55aDewNf).
+Primeiramente, deve-se criar um arquivo de nome `.env` dento do diretório `api` e nele colocar o conteúdo do arquivo `.env.example` substituindo **USUARIO, SENHA, HOST e PORTA** que estão em maiúsculo no arquivo, de acordo com as credenciais do seu server PostgreSQL.
 
-## Design/Screens
-https://www.figma.com/file/KFElqzD983WNyvMY1SaF0c/book-app?node-id=0%3A1
+Ainda dentro do diretório `api`, siga os seguintes passos:
+ 
+- Instale as dependências do projeto:
 
-<img width="759" alt="Screen Shot 2021-04-13 at 10 42 56" src="https://user-images.githubusercontent.com/13947203/114562602-04ac2880-9c45-11eb-8f33-cc6637c475fb.png">
+```shell
+$ yarn // ou npm install
+```
 
+- Criar o banco e rodar a migrations:
 
-The website design has 4 screens, which are:
+```shell
+$ yarn prisma migrate dev // ou npx prisma migrate dev
+```
 
-### Home
+- Iniciar api
 
-1. Create a Pixel Perfect screen based on design above;
-2. The books must be clickable and redirect to details screen.
+```shell
+$ yarn dev // ou npm run dev
+```
 
-### Search
+A API estará rodando na porta 3333
 
-In this screen the functionalities below are **mandatory**:
+## Web
 
-1. See a list of books based on search query;
-2. Make it possible to search for more books with a "Load more" button;
-3. Search books by name;
-4. Click on one of the books to see their details.
+- React.js
+  
+No diretório `web`, siga os seguintes passos:
+ 
+- Instale as dependências do projeto:
 
-### Books Details
+```shell
+$ yarn // ou npm install
+```
+- Iniciar aplicação web
 
-In this screen the functionalities below are **mandatory**:
+```shell
+$ yarn start // ou npm start
+```
 
-1. See all information for the selected book.
+A aplicação web estará rodando na porta 3000 e acessando a porta 3333 da api nas requisições.
 
-### New Book
+Caso queira alterar a porta da API, edite o arquivo `/api/src/server.ts` e na linha onde encontra-se `app.listen(3333, () => console.log('Server running on 3333'))`, substitua `3333` pela porta desejada.
 
-In this screen the functionalities below are **mandatory**:
-
-1. Create a Book;
-2. Validate the form data.
+Se a porta da API for alterada, deve-se editar o arquivo `/web/src/services/api.ts`, na linha onde encontra-se `baseURL: 'http://localhost:3333/'`, substitua `3333` pela porta alterada.
